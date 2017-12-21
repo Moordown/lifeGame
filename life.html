@@ -110,14 +110,7 @@ function willLive(neighboor, cell)
 		if (getCellState(candidate.X, candidate.Y) == ALIVE)
 			amountLive++;
 	}
-	/*
-	console.log(cell);
-	console.log('cellState ' + getCellState(cell.X, cell.Y));
-	console.log(neighboor);
-	console.log(amountLive);
-	*/
 	if (getCellState(cell.X, cell.Y) == ALIVE)
-		// 6|{2,3} - cell will live, otherwise won't
 		return +(amountLive === 2 || amountLive === 3);
 	else
 		return +(amountLive === 3);
@@ -146,8 +139,6 @@ function lifeStep() {
 		{
 			var doubleNeighboors = getNeighboor(neighboor.X, neighboor.Y);
 			var tempVal = willLive(doubleNeighboors, neighboor);
-			//console.log(neighboor.toString() + " " + tempVal);
-			//console.log();
 			if (tempVal === ALIVE)
 			{
 				newActiveCell[neighboor.toString()]=null;
