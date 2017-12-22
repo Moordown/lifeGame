@@ -72,11 +72,7 @@ function cellClick(event) {
 
 function getCellState(x, y)
 {
-<<<<<<< HEAD
 	if( x < 0 || x >= CELL_X_COUNT || y < 0 || y >= CELL_Y_COUNT)	{
-=======
-	if( x < 0 || x > CELL_X_COUNT || y < 0 || y > CELL_Y_COUNT)	{
->>>>>>> 3d33e03b6e06d74552624e27a90b3a6ccfa81cec
 		return null;
 	}
 	var cell = document.getElementById("x" + x + "y" + y);
@@ -86,11 +82,7 @@ function getCellState(x, y)
 
 function setCellState(x, y, deadOrAlive){	
 
-<<<<<<< HEAD
 	if( x < 0 || x >= CELL_X_COUNT || y < 0 || y >= CELL_Y_COUNT)	{
-=======
-	if( x < 0 || x > CELL_X_COUNT || y < 0 || y > CELL_Y_COUNT)	{
->>>>>>> 3d33e03b6e06d74552624e27a90b3a6ccfa81cec
 		return;
 	}
 	var cell = document.getElementById("x" + x + "y" + y);
