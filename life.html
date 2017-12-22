@@ -190,6 +190,28 @@ function killLife() {
 	count.innerHTML=generation;
 }
 
+function getSausage()
+{
+	killLife();
+	var y=5;
+	var x=5;
+	for(var dx=0; dx<8; dx++)
+		setCellState(x+dx, y, ALIVE);
+	x += dx+1;
+	for(dx=0; dx<5; dx++)
+		setCellState(x+dx, y, ALIVE);
+	x += dx+3;
+	for(dx=0; dx<3; dx++)
+		setCellState(x+dx, y, ALIVE);
+	x += dx+6;
+	for(dx=0; dx<7; dx++)
+		setCellState(x+dx, y, ALIVE);
+	x += dx + 1;
+	for(dx=0; dx<5; dx++)
+		setCellState(x+dx, y, ALIVE);
+
+}
+
 </script>
 </head>
 <body onload="createUniverse();" onclick="cellClick(event)">
@@ -201,6 +223,9 @@ function killLife() {
 			<button onclick="pauseLife()">Pause Life</button>
 			<button onclick="killLife()">Kill Life</button>
 			<button onclick="lifeStep()">Step</button>
+			<button onclick="getSausage()">
+				GetSausage
+			</button>>
 		</div>
 		<div id='universe'></div>
 	</div>
