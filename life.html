@@ -129,6 +129,7 @@ function getNeighboor(x, y)
 function lifeStep() {
 	var isGeneration = false;
 	var newActiveCell = {};
+	var passedCells = {};
 	for (var actCell in activeCell)
 	{
 		var coord = actCell.split(":")
@@ -139,8 +140,10 @@ function lifeStep() {
 		{
 			var doubleNeighboors = getNeighboor(neighboor.X, neighboor.Y);
 			var tempVal = willLive(doubleNeighboors, neighboor);
-			if (tempVal === ALIVE)
-			{
+			// отсекаем перебор
+			if (tempVal === ALIVE && !(neighboor in passedCells))
+			{	
+				passedCells[neighboor]=null;
 				newActiveCell[neighboor.toString()]=null;
 			}
 		}
